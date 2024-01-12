@@ -1,0 +1,35 @@
+class Solution(object):
+    def isPalindrome(self, s):
+      i = 0
+      clean = ""
+      #Using a built in funnction to remove space and special char:
+      #result = re.sub(r'[^a-zA-Z0-9]', '', s)
+      #print(result)
+
+      #using my own function:
+      while i < len(s):
+         if s[i] != ' ' and s[i] != ',' and s[i] != ':':
+          clean+=s[i]
+          i+=1
+         else :
+          i+=1
+      
+      clean = clean.lower()
+      print("clean", clean)
+      print(len(clean))
+      print(len(clean)/2)
+
+      #checking for palindrom
+      x = 0
+      for x in range(len(clean)/2):
+        if clean[x] != clean[len(clean)-(1+x)]:
+            return False
+        else :
+            x+=1
+      return True
+              
+
+
+
+      
+
