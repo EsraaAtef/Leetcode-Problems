@@ -1,0 +1,18 @@
+class Solution(object):
+    def plusOne(self, digits):
+        i = 0
+        sum = ""
+        #make the list to be one string with all numbers from the list
+        while i <= len(digits)-1:
+            sum = sum+ str(digits[i])
+            i+=1
+        #another way of changing from list of ints to a string >> newstring = ''.join(map(str,digits))
+        #increment the number by 1 and convert back to string
+        newsum = 1 + int(sum)
+        final = str(newsum)
+        #convert the string in to a list of integers
+        newlist = [int(digit) for digit in final]
+        return(newlist)
+        
+        
+        
