@@ -1,0 +1,31 @@
+class Solution(object):
+
+    def uniqueOccurrences(self, arr):
+        """
+        :type arr: List[int]
+        :rtype: bool
+        """
+        Flag = False
+        arrayOcc = []
+        i = 0
+        arrout = []
+        while(i<len(arr)):
+            numocc = 0
+            z = 0
+            if arr[i] not in arrout:
+              for z in range(len(arr)):
+                  if arr[i] == arr[z]:
+                      numocc +=1
+              arrayOcc.append(numocc)
+              arrout.append(arr[i])
+            i+=1
+        
+        unique_numbers = list(set(arrayOcc))
+        if(len(arrayOcc) == len(unique_numbers)):
+            Flag = True
+        return(Flag)
+
+
+
+        
+
