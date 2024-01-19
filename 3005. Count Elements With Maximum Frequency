@@ -1,0 +1,41 @@
+class Solution(object):
+    def maxFrequencyElements(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        
+        Flag = False
+        arrayOcc = []
+        i = 0
+        arrout = []
+        arr = nums
+        while(i<len(arr)):
+            numocc = 0
+            z = 0
+            if arr[i] not in arrout:
+              for z in range(len(arr)):
+                  if arr[i] == arr[z]:
+                      numocc +=1
+              arrayOcc.append(numocc)
+              arrout.append(arr[i])
+            i+=1
+        
+        sum = 0
+       # print(arrayOcc)
+       # print(max(arrayOcc))
+        #print("Sum 1 : {}".format(sum))
+        if len(arrayOcc) > 0 :
+           # print("Sum 2 : {}".format(sum))
+            for x in range (len(arrayOcc)):
+             #  print("Sum 3 : {}".format(sum))
+               if max(arrayOcc) == arrayOcc[x]:
+                  sum+=arrayOcc[x]
+               #   print("Sum 4 : {}".format(sum))
+            return(sum)
+        #print("Sum 5 : {}".format(sum))
+                
+        if len(arrayOcc == 0) :
+            return(len(num))
+        
+            
